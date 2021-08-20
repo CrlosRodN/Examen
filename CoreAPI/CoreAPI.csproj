@@ -41,7 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseManager.cs" />
+    <Compile Include="CreditoManager.cs" />
+    <Compile Include="CuentaManager.cs" />
     <Compile Include="CustomerManager.cs" />
+    <Compile Include="DireccionManager.cs" />
     <Compile Include="ListManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
