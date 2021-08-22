@@ -32,7 +32,7 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public ActionResult vDiraccion()
+        public ActionResult vDireccion()
         {
 
             return View();
