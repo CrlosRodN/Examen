@@ -25,5 +25,23 @@ namespace WebApp.Controllers
         {
             return View();
         }
+
+        public ActionResult vAccounts()
+        {
+
+            return View();
+        }
+
+        public ActionResult vAddresses()
+        {
+
+            return View();
+        }
+
+        public ActionResult vCredits()
+        {
+
+            return View();
+        }
     }
 }

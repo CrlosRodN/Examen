@@ -42,7 +42,7 @@ namespace DataAcess.Mapper
             var operation = new SqlOperation { ProcedureName = "RET_CREDIT_PR" };
 
             var c = (Credito)entity;
-            operation.AddVarcharParam(DB_COL_ID, c.Id);
+            operation.AddVarcharParam(DB_COL_ID, c.id);
 
             return operation;
         }
@@ -58,14 +58,14 @@ namespace DataAcess.Mapper
             var operation = new SqlOperation { ProcedureName = "UPD_CREDIT_PR" };
 
             var c = (Credito)entity;
-            operation.AddVarcharParam(DB_COL_ID, c.Id);
-            operation.AddDoubleParam(DB_COL_MONTO, c.Monto);
-            operation.AddDoubleParam(DB_COL_TASA, c.Tasa);
-            operation.AddVarcharParam(DB_COL_NOMBRE, c.Nombre);
-            operation.AddDoubleParam(DB_COL_CUOTA, c.Cuota);
-            operation.AddDateParam(DB_COL_FECHA_INICIO, c.FechaInicio);
-            operation.AddVarcharParam(DB_COL_ESTADO, c.Estado);
-            operation.AddDoubleParam(DB_COL_SALDO, c.Saldo);
+            operation.AddVarcharParam(DB_COL_ID, c.id);
+            operation.AddDoubleParam(DB_COL_MONTO, c.monto);
+            operation.AddDoubleParam(DB_COL_TASA, c.tasa);
+            operation.AddVarcharParam(DB_COL_NOMBRE, c.nombre);
+            operation.AddDoubleParam(DB_COL_CUOTA, c.cuota);
+            operation.AddDateParam(DB_COL_FECHA_INICIO, c.fechaInicio);
+            operation.AddVarcharParam(DB_COL_ESTADO, c.estado);
+            operation.AddDoubleParam(DB_COL_SALDO, c.saldo);
 
             return operation;
         }
@@ -75,7 +75,7 @@ namespace DataAcess.Mapper
             var operation = new SqlOperation { ProcedureName = "DEL_CREDIT_PR" };
 
             var c = (Credito)entity;
-            operation.AddVarcharParam(DB_COL_ID, c.Id);
+            operation.AddVarcharParam(DB_COL_ID, c.id);
             return operation;
         }
 
@@ -96,14 +96,14 @@ namespace DataAcess.Mapper
         {
             var credito = new Credito
             {
-                Id = GetStringValue(row, DB_COL_ID),
-                Monto = GetDoubleValue(row, DB_COL_MONTO),
-                Tasa = GetDoubleValue(row, DB_COL_TASA),
-                Nombre = GetStringValue(row, DB_COL_NOMBRE),
-                Cuota = GetDoubleValue(row, DB_COL_CUOTA),
-                FechaInicio = GetDateValue(row, DB_COL_FECHA_INICIO),
-                Estado = GetStringValue(row, DB_COL_ESTADO),
-                Saldo = GetDoubleValue(row, DB_COL_SALDO)
+                id = GetStringValue(row, DB_COL_ID),
+                monto = GetDoubleValue(row, DB_COL_MONTO),
+                tasa = GetDoubleValue(row, DB_COL_TASA),
+                nombre = GetStringValue(row, DB_COL_NOMBRE),
+                cuota = GetDoubleValue(row, DB_COL_CUOTA),
+                fechaInicio = GetDateValue(row, DB_COL_FECHA_INICIO),
+                estado = GetStringValue(row, DB_COL_ESTADO),
+                saldo = GetDoubleValue(row, DB_COL_SALDO)
             };
 
             return credito;

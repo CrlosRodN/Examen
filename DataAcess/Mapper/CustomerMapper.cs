@@ -1,6 +1,8 @@
 ﻿using DataAcess.Dao;
 using Entities_POJO;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace DataAcess.Mapper
 {
@@ -8,9 +10,11 @@ namespace DataAcess.Mapper
     {
         private const string DB_COL_ID = "ID";
         private const string DB_COL_NAME = "NAME";
-        private const string DB_COL_LAST_NAME= "LAST_NAME";
+        private const string DB_COL_LAST_NAME = "LAST_NAME";
+        private const string DB_COL_FECHA_NAC = "FECHA_NACIMIENTO";
         private const string DB_COL_AGE = "AGE";
-
+        private const string DB_COL_ESTADO_CIV = "ESTADO_CIVIL";
+        private const string DB_COL_GENERO = "GENERO";
 
         public SqlOperation GetCreateStatement(BaseEntity entity)
         {
@@ -20,7 +24,10 @@ namespace DataAcess.Mapper
             operation.AddVarcharParam(DB_COL_ID, c.Id);
             operation.AddVarcharParam(DB_COL_NAME, c.Name);
             operation.AddVarcharParam(DB_COL_LAST_NAME, c.LastName);
+            operation.AddDateParam(DB_COL_FECHA_NAC, c.fechaNacimiento);
             operation.AddIntParam(DB_COL_AGE, c.Age);
+            operation.AddVarcharParam(DB_COL_ESTADO_CIV, c.estadoCivil);
+            operation.AddVarcharParam(DB_COL_GENERO, c.genero);
 
             return operation;
         }
@@ -50,7 +57,10 @@ namespace DataAcess.Mapper
             operation.AddVarcharParam(DB_COL_ID, c.Id);
             operation.AddVarcharParam(DB_COL_NAME, c.Name);
             operation.AddVarcharParam(DB_COL_LAST_NAME, c.LastName);
+            operation.AddDateParam(DB_COL_FECHA_NAC, c.fechaNacimiento);
             operation.AddIntParam(DB_COL_AGE, c.Age);
+            operation.AddVarcharParam(DB_COL_ESTADO_CIV, c.estadoCivil);
+            operation.AddVarcharParam(DB_COL_GENERO, c.genero);
 
             return operation;
         }
@@ -84,7 +94,10 @@ namespace DataAcess.Mapper
                 Id = GetStringValue(row, DB_COL_ID),
                 Name = GetStringValue(row, DB_COL_NAME),
                 LastName = GetStringValue(row, DB_COL_LAST_NAME),
-                Age = GetIntValue(row, DB_COL_AGE)
+                fechaNacimiento = GetDateValue(row, DB_COL_FECHA_NAC),
+                Age = GetIntValue(row, DB_COL_AGE),
+                estadoCivil = GetStringValue(row, DB_COL_ESTADO_CIV),
+                genero = GetStringValue(row, DB_COL_GENERO)
             };
 
             return customer;

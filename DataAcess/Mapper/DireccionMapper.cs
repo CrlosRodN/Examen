@@ -14,7 +14,7 @@ namespace DataAcess.Mapper
         private const string DB_COL_PROVINCIA = "PROVINCIA";
         private const string DB_COL_CANTON = "CANTON";
         private const string DB_COL_DISTRITO = "DISTRITO";
-        private const string DB_COL_DIRECCION = "SENNAS";
+        private const string DB_COL_SENNAS = "SENNAS";
         private const string DB_COL_TIPO = "TIPO";
 
         public SqlOperation GetCreateStatement(BaseEntity entity)
@@ -26,7 +26,7 @@ namespace DataAcess.Mapper
             operation.AddVarcharParam(DB_COL_PROVINCIA, a.provincia);
             operation.AddVarcharParam(DB_COL_CANTON, a.canton);
             operation.AddVarcharParam(DB_COL_DISTRITO, a.distrito);
-            operation.AddVarcharParam(DB_COL_DIRECCION, a.direccion);
+            operation.AddVarcharParam(DB_COL_SENNAS, a.sennas);
             operation.AddVarcharParam(DB_COL_TIPO, a.tipo);
 
             return operation;
@@ -38,7 +38,7 @@ namespace DataAcess.Mapper
             var operation = new SqlOperation { ProcedureName = "RET_DIRECCION_PR" };
 
             var a = (Direccion)entity;
-            operation.AddVarcharParam(DB_COL_ID, a.Id);
+            operation.AddVarcharParam(DB_COL_ID, a.id);
 
             return operation;
         }
@@ -58,7 +58,7 @@ namespace DataAcess.Mapper
             operation.AddVarcharParam(DB_COL_PROVINCIA, a.provincia);
             operation.AddVarcharParam(DB_COL_CANTON, a.canton);
             operation.AddVarcharParam(DB_COL_DISTRITO, a.distrito);
-            operation.AddVarcharParam(DB_COL_DIRECCION, a.direccion);
+            operation.AddVarcharParam(DB_COL_SENNAS, a.sennas);
             operation.AddVarcharParam(DB_COL_TIPO, a.tipo);
 
             return operation;
@@ -90,12 +90,12 @@ namespace DataAcess.Mapper
         {
             var direccion = new Direccion
             {
-                Id = GetStringValue(row, DB_COL_ID),
-                Provincia = GetStringValue(row, DB_COL_PROVINCIA),
-                Canton = GetStringValue(row, DB_COL_CANTON),
-                Distrito = GetStringValue(row, DB_COL_DISTRITO),
-                Sennas = GetStringValue(row, DB_COL_DIRECCION),
-                Tipo = GetStringValue(row, DB_COL_TIPO)
+                id = GetStringValue(row, DB_COL_ID),
+                provincia = GetStringValue(row, DB_COL_PROVINCIA),
+                canton = GetStringValue(row, DB_COL_CANTON),
+                distrito = GetStringValue(row, DB_COL_DISTRITO),
+                sennas = GetStringValue(row, DB_COL_SENNAS),
+                tipo = GetStringValue(row, DB_COL_TIPO)
             };
 
             return direccion;

@@ -16,7 +16,6 @@ namespace DataAcess.Mapper
         private const string DB_COL_FECHA_APERTURA = "FECHA_APERTURA";
         private const string DB_COL_SALDO = "SALDO";
 
-
         public SqlOperation GetCreateStatement(BaseEntity entity)
         {
             var operation = new SqlOperation { ProcedureName = "CRE_ACCOUNT_PR" };
