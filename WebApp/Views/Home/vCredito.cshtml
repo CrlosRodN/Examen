@@ -1,0 +1,47 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/"></script>
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+@Html.CtrlTable(viewName: "vCredito", id: "tblCustomers", title: "Listado de clientes",
+    columnsTitle: "Identificación, Monto, Tasa, Nombre, Cuota, Fecha de Inicio, Estado, Saldo", ColumnsDataName: "id, monto, tasa, nombre, cuota, fechaInicio, estado, saldo",
+    onSelectFunction: "BindFields", colorHeader: "red")
+
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        <div class="row pull-right">
+            <div class="col-md-8">Edición de Credito</div>
+            <div class="col-md-4">
+                @Html.CtrlButton(viewName: "vCredito", id: "btnCreate", label: "Guardar", onClickFunction: "Create", buttonType: "success")
+                @Html.CtrlButton(viewName: "vCredito", id: "btnUpdate", label: "Actualizar", onClickFunction: "Update", buttonType: "info")
+                @Html.CtrlButton(viewName: "vCredito", id: "btnDelete", label: "Borrar", onClickFunction: "Delete", buttonType: "danger")
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    <form id="frmEdition">
+                        @Html.CtrlInput(id: "txtId", type: "number", label: "Identificación", columnDataName: "id")
+                        @Html.CtrlInput(id: "txtMonto", type: "number", label: "Monto", columnDataName: "monto")
+                        @Html.CtrlInput(id: "txtTasa", type: "text", label: "Tasa", columnDataName: "tasa")
+                        @Html.CtrlInput(id: "txtName", type: "text", label: "Nombre", columnDataName: "Name")
+                        @Html.CtrlInput(id: "txtCuota", type: "number", label: "Cuota", columnDataName: "cuota")
+                        @Html.CtrlInput(id: "txtFecha", type: "date", label: "Fecha de Inicio", columnDataName: "fechaInicio")
+                        <div>
+                            <label>Estado</label>
+                        </div>
+                        <select name="Estado_Credito" id="DDEstado">
+                            <option value="">Seleccione uno</option>
+                            <option value="Al_dia">Al día</option>
+                            <option value="Moroso">Matrimonio</option>
+                            <option value="Finalizado">Finalizado</option>
+                        </select>
+                        @Html.CtrlInput(id: "txtAge", type: "number", label: "Saldo", columnDataName: "Age")
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

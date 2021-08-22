@@ -209,6 +209,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Views\Home\vCustomers.cshtml" />
+    <Content Include="Views\Home\vCuenta.cshtml" />
+    <Content Include="Views\Home\vCredito.cshtml" />
+    <Content Include="Views\Home\vDireccion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities-POJO\Entities-POJO.csproj">

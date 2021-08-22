@@ -1,0 +1,77 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/"></script>
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+@Html.CtrlTable(viewName: "vDireccion", id: "tblCustomers", title: "Listado de clientes",
+    columnsTitle: "Identificación, Provincia, Canton, Distrito, Señas, tipo", ColumnsDataName: "id, provincia, canton, distrito, sennas, tipo",
+    onSelectFunction: "BindFields", colorHeader: "red")
+
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        <div class="row pull-right">
+            <div class="col-md-8">Edición de Direccion</div>
+            <div class="col-md-4">
+                @Html.CtrlButton(viewName: "vDireccion", id: "btnCreate", label: "Guardar", onClickFunction: "Create", buttonType: "success")
+                @Html.CtrlButton(viewName: "vDireccion", id: "btnUpdate", label: "Actualizar", onClickFunction: "Update", buttonType: "info")
+                @Html.CtrlButton(viewName: "vDireccion", id: "btnDelete", label: "Borrar", onClickFunction: "Delete", buttonType: "danger")
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    <form id="frmEdition">
+                        @Html.CtrlInput(id: "txtId", type: "text", label: "Identificación", columnDataName: "Id")
+                        <div>
+                            <label>Provincia</label>
+                        </div>
+                        <select name="Provincia" id="DDProvincia">
+                            <option value="">Seleccione uno</option>
+                            <option value="San_Jose">San José</option>
+                            <option value="Guanacaste">Guanacaste</option>
+                            <option value="Puntarenas">Puntarenas</option>
+                            <option value="Limon">Limon</option>
+                            <option value="Heredia">Heredia</option>
+                            <option value="Cartago">Cartago</option>
+                            <option value="Alajuela">Alajuela</option>
+                        </select>
+                        <div>
+                            <label>Canton</label>
+                        </div>
+                        <select name="Canton" id="DDCanton">
+                            <option value="">Seleccione uno</option>
+                            <option value="San_Jose">San José</option>
+                            <option value="Escazu">Escazú</option>
+                            <option value="Desamparados">Desamparados</option>
+                            <option value="Puriscal">Puriscal</option>
+                        </select>
+                        <div>
+                            <label>Distrito</label>
+                        </div>
+                        <select name="Distrito" id="DDEstCiv">
+                            <option value="">Seleccione uno</option>
+                            <option value="Carmen">Carmen</option>
+                            <option value="Merced">Merced</option>
+                            <option value="Hospital">Hospital</option>
+                            <option value="Catedral">Catedral</option>
+                            <option value="Zapote">Zapote</option>
+                        </select>
+                        @Html.CtrlInput(id: "txtSennas", type: "text", label: "Señas", columnDataName: "Sennas")
+                        
+                        <div>
+                            <label>Tipo de Dirección</label>
+                        </div>
+                        <select name="Tipo" id="DDTipo">
+                            <option value="">Seleccione uno</option>
+                            <option value="Residencia">Residencia</option>
+                            <option value="Trabajo">Trabajo</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

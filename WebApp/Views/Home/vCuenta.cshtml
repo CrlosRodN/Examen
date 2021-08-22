@@ -1,0 +1,45 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/"></script>
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+@Html.CtrlTable(viewName: "vCuentas", id: "tblCuentas", title: "Listado de cuentas",
+    columnsTitle: "Identificación, Nombre, Tipo, Fecha de Apertura, Saldo", ColumnsDataName: "id, nombre, tipo, fechaApert,saldo",
+    onSelectFunction: "BindFields", colorHeader: "red")
+
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        <div class="row pull-right">
+            <div class="col-md-8">Edición de Cuenta</div>
+            <div class="col-md-4">
+                @Html.CtrlButton(viewName: "vCuentas", id: "btnCreate", label: "Guardar", onClickFunction: "Create", buttonType: "success")
+                @Html.CtrlButton(viewName: "vCuentas", id: "btnUpdate", label: "Actualizar", onClickFunction: "Update", buttonType: "info")
+                @Html.CtrlButton(viewName: "vCuentas", id: "btnDelete", label: "Borrar", onClickFunction: "Delete", buttonType: "danger")
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    <form id="frmEdition">
+                        @Html.CtrlInput(id: "txtId", type: "text", label: "Identificación", columnDataName: "id")
+                        @Html.CtrlInput(id: "txtName", type: "text", label: "Nombre", columnDataName: "nombre")
+                        <div>
+                            <label>Tipo de cuenta</label>
+                        </div>
+                        <select name="tipo_cuenta" id="DDTipo">
+                            <option value="">Seleccione uno</option>
+                            <option value="CorrienteC">Corriente colones</option>
+                            <option value="CorrienteD">Corriente dolares</option>
+                            <option value="AhorroC">Ahorro colones</option>
+                            <option value="AhorroD">Ahorro dolares</option>
+                        </select>
+                        @Html.CtrlInput(id: "txtFecha", type: "date", label: "Fecha de Apertura", columnDataName: "fechaApert")
+                        @Html.CtrlInput(id: "txtSaldo", type: "number", label: "Saldo", columnDataName: "saldo")
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
