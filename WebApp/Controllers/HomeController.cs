@@ -26,19 +26,19 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public ActionResult vAccounts()
+        public ActionResult vCuenta()
         {
 
             return View();
         }
 
-        public ActionResult vAddresses()
+        public ActionResult vDiraccion()
         {
 
             return View();
         }
 
-        public ActionResult vCredits()
+        public ActionResult vCredito()
         {
 
             return View();

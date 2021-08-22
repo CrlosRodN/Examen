@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customers App</title>
+    <title>Cenfobank</title>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/datetimeplugin.js"></script>
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery.dataTables.min.js"></script>
@@ -24,14 +27,14 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Clientes <span class="caret"></span></a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Opciones <span class="caret"></span></a>
                         <div class="dropdown-menu" aria-labelledby="Clientes">
                             @Html.ActionLink("Home", "Index", "Home", new { @class = "dropdown-item" })
                         <div class="dropdown-divider"></div>
-                            @Html.ActionLink("CRUD Clientes", "vCustomers", "Home", new { @class = "dropdown-item" })
-                            @Html.ActionLink("CRUD Cuentas", "vCuenta", "Home", new { @class = "dropdown-item" })
-                            @Html.ActionLink("CRUD Creditos", "vCredito", "Home", new { @class = "dropdown-item" })
-                            @Html.ActionLink("CRUD Direcciones", "vDireccion", "Home", new { @class = "dropdown-item" })
+                            @Html.ActionLink("Clientes", "vCustomers", "Home", new { @class = "dropdown-item" })
+                            @Html.ActionLink("Cuentas", "vCuenta", "Home", new { @class = "dropdown-item" })
+                            @Html.ActionLink("Creditos", "vCredito", "Home", new { @class = "dropdown-item" })
+                            @Html.ActionLink("Direcciones", "vDireccion", "Home", new { @class = "dropdown-item" })
                         </div>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">

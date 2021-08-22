@@ -1,5 +1,8 @@
 ﻿@using WebApp.Helpers;
-<script src="~/Scripts/Views/"></script>
+<script src="~/Scripts/moment.js"></script>
+<script src="~/Scripts/moment.min.js"></script>
+<script src="~/Scripts/datetimeplugin.js"></script>
+<script src="~/Scripts/Views/vDireccion.js"></script>
 @{ Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 @Html.CtrlTable(viewName: "vDireccion", id: "tblCustomers", title: "Listado de clientes",
@@ -59,7 +62,7 @@
                             <option value="Zapote">Zapote</option>
                         </select>
                         @Html.CtrlInput(id: "txtSennas", type: "text", label: "Señas", columnDataName: "Sennas")
-                        
+
                         <div>
                             <label>Tipo de Dirección</label>
                         </div>

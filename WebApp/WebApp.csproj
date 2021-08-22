@@ -177,7 +177,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery.dataTables.min.js" />
     <Content Include="Scripts\Views\ControlActions.js" />
+    <Content Include="Scripts\Views\vCredito.js" />
+    <Content Include="Scripts\Views\vCuenta.js" />
     <Content Include="Scripts\Views\vCustomers.js" />
+    <Content Include="Scripts\Views\vDireccion.js" />
     <Content Include="Scripts\Views\vIndex.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
