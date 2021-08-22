@@ -1,22 +1,20 @@
 ﻿@using WebApp.Helpers;
 <script src="~/Scripts/Views/vCustomers.js"></script>
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 @Html.CtrlTable(viewName: "vCustomers", id: "tblCustomers", title: "Listado de clientes",
-    columnsTitle: "Identification,Name,Last Name,Age", ColumnsDataName: "Id,Name,LastName,Age", 
-    onSelectFunction: "BindFields", colorHeader:"red")
+    columnsTitle: "Identificación, Nombre, Apellido, Fecha de Nacimiento, Edad, Estado Civil, Género", ColumnsDataName: "Id, Name, LastName, fechaNacimiento, Age, estadoCivil, genero",
+    onSelectFunction: "BindFields", colorHeader: "red")
 
 
 <div class="card border-secondary" style="margin-top: 50px;">
     <div class="card-header">
         <div class="row pull-right">
-            <div class="col-md-8">Customer edition</div>
+            <div class="col-md-8">Edición de Cliente</div>
             <div class="col-md-4">
-                @Html.CtrlButton(viewName: "vCustomers", id: "btnCreate", label: "Save", onClickFunction: "Create", buttonType:"success")
-                @Html.CtrlButton(viewName: "vCustomers", id: "btnUpdate", label: "Save changes", onClickFunction: "Update", buttonType: "info")
-                @Html.CtrlButton(viewName: "vCustomers", id: "btnDelete", label: "Delete", onClickFunction: "Delete",buttonType: "danger")
+                @Html.CtrlButton(viewName: "vCustomers", id: "btnCreate", label: "Guardar", onClickFunction: "Create", buttonType: "success")
+                @Html.CtrlButton(viewName: "vCustomers", id: "btnUpdate", label: "Actualizar", onClickFunction: "Update", buttonType: "info")
+                @Html.CtrlButton(viewName: "vCustomers", id: "btnDelete", label: "Borrar", onClickFunction: "Delete", buttonType: "danger")
             </div>
         </div>
     </div>
@@ -25,15 +23,33 @@
             <div class="col-lg-6">
                 <div class="bs-component">
                     <form id="frmEdition">
-                        @Html.CtrlInput(id: "txtId", type: "text", label: "Id", columnDataName: "Id")
-                        @Html.CtrlInput(id: "txtName", type: "text", label: "Name", columnDataName: "Name")
-                        @Html.CtrlInput(id: "txtLastName", type: "text", label: "LastName", columnDataName: "LastName")
+                        @Html.CtrlInput(id: "txtId", type: "text", label: "Identificación", columnDataName: "Id")
+                        @Html.CtrlInput(id: "txtName", type: "text", label: "Nombre", columnDataName: "Name")
+                        @Html.CtrlInput(id: "txtLastName", type: "text", label: "Apellido", columnDataName: "LastName")
+                        @Html.CtrlInput(id: "txtFecha", type: "date", label: "Fecha de Nacimiento", columnDataName: "fechaNacimiento")
                         @Html.CtrlInput(id: "txtAge", type: "number", label: "Age", columnDataName: "Age")
-                        @Html.CtrlDropDown(id: "drpGender", label: "Gender", listId: "LST_GENERO")
-                        @Html.CtrlDropDown(id: "Best Friend", label: "Gender", listId: "LST_CUSTOMER")
+                        <div>
+                            <label>Estado Civil</label>
+                        </div>
+                        <select name="Estado_Civil" id="DDEstCiv">
+                            <option value="">Seleccione uno</option>
+                            <option value="Soltería">Soltería</option>
+                            <option value="Matrimonio">Matrimonio</option>
+                            <option value="Unión Libre">Unión Libre</option>
+                            <option value="Divorcio">Divorcio</option>
+                        </select>
+                        <div>
+                            <label>Tipo de Identificación</label>
+                        </div>
+                        <select name="Genero" id="DDGenero">
+                            <option value="">Seleccione uno</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenina">Femenina</option>
+                            <option value="Otro">Otro</option>
+                        </select>
                     </form>
                 </div>
             </div>
         </div>
-     </div>
+    </div>
 </div>
